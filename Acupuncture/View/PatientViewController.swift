@@ -31,7 +31,10 @@ class PatientViewController: UIViewController {
             Rows(title: "Willian", subTitle: "32"),
             Rows(title: "Felipe", subTitle: "13")
         ]
-        
+    }
+    
+    @IBAction func addPatient(_ sender: UIBarButtonItem) {
+        self.performSegue(withIdentifier: "showPatientDetail", sender: (Any).self);
     }
 }
 

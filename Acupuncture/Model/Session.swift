@@ -10,12 +10,16 @@ import Foundation
 
 class Session {
     let number: Int
+    let description: String
     let patient: Patient
     let date: Date
+    let treatment: Treatment
     
-    init(number: Int, patient: Patient, date: Date) {
+    init(number: Int, description: String, patient: Patient, date: Date, treatment: Treatment) {
         self.number = number
+        self.description = description
         self.patient = patient
         self.date = date
+        self.treatment = treatment
     }
 }

@@ -20,6 +20,11 @@
 		CD9F42F62255625C009A1C02 /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42F52255625C009A1C02 /* MenuTableViewCell.swift */; };
 		CD9F42F8225A597E009A1C02 /* PatientViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42F7225A597E009A1C02 /* PatientViewController.swift */; };
 		CD9F42FA225C2723009A1C02 /* PatientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42F9225C2723009A1C02 /* PatientTableViewCell.swift */; };
+		CD9F42FC225C2A08009A1C02 /* SymptomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42FB225C2A08009A1C02 /* SymptomViewController.swift */; };
+		CD9F42FE225C2A2A009A1C02 /* SymptomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42FD225C2A2A009A1C02 /* SymptomTableViewCell.swift */; };
+		CD9F4300225D7FC8009A1C02 /* TreatmentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F42FF225D7FC8009A1C02 /* TreatmentViewController.swift */; };
+		CD9F4303225D8040009A1C02 /* TreatmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F4302225D8040009A1C02 /* TreatmentTableViewCell.swift */; };
+		CD9F4305225ECFAD009A1C02 /* SessionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD9F4304225ECFAD009A1C02 /* SessionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +43,11 @@
 		CD9F42F52255625C009A1C02 /* MenuTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
 		CD9F42F7225A597E009A1C02 /* PatientViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientViewController.swift; sourceTree = "<group>"; };
 		CD9F42F9225C2723009A1C02 /* PatientTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PatientTableViewCell.swift; sourceTree = "<group>"; };
+		CD9F42FB225C2A08009A1C02 /* SymptomViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomViewController.swift; sourceTree = "<group>"; };
+		CD9F42FD225C2A2A009A1C02 /* SymptomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomTableViewCell.swift; sourceTree = "<group>"; };
+		CD9F42FF225D7FC8009A1C02 /* TreatmentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentViewController.swift; sourceTree = "<group>"; };
+		CD9F4302225D8040009A1C02 /* TreatmentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TreatmentTableViewCell.swift; sourceTree = "<group>"; };
+		CD9F4304225ECFAD009A1C02 /* SessionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +100,11 @@
 				CD9F42922250FA1F009A1C02 /* MenuViewController.swift */,
 				CD9F42F7225A597E009A1C02 /* PatientViewController.swift */,
 				CD9F42F9225C2723009A1C02 /* PatientTableViewCell.swift */,
+				CD9F42FB225C2A08009A1C02 /* SymptomViewController.swift */,
+				CD9F42FD225C2A2A009A1C02 /* SymptomTableViewCell.swift */,
+				CD9F42FF225D7FC8009A1C02 /* TreatmentViewController.swift */,
+				CD9F4302225D8040009A1C02 /* TreatmentTableViewCell.swift */,
+				CD9F4304225ECFAD009A1C02 /* SessionViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -186,12 +201,17 @@
 				CD9F42F422543431009A1C02 /* Session.swift in Sources */,
 				CD9F42992250FA1F009A1C02 /* Acupuncture.xcdatamodeld in Sources */,
 				CD9F42F62255625C009A1C02 /* MenuTableViewCell.swift in Sources */,
+				CD9F4305225ECFAD009A1C02 /* SessionViewController.swift in Sources */,
 				CD9F42A92250FA8B009A1C02 /* Symptom.swift in Sources */,
+				CD9F4303225D8040009A1C02 /* TreatmentTableViewCell.swift in Sources */,
 				CD9F42AD2250FB56009A1C02 /* Treatment.swift in Sources */,
+				CD9F42FE225C2A2A009A1C02 /* SymptomTableViewCell.swift in Sources */,
 				CD9F42932250FA1F009A1C02 /* MenuViewController.swift in Sources */,
+				CD9F42FC225C2A08009A1C02 /* SymptomViewController.swift in Sources */,
 				CD9F42912250FA1F009A1C02 /* AppDelegate.swift in Sources */,
 				CD9F42FA225C2723009A1C02 /* PatientTableViewCell.swift in Sources */,
 				CD9F42AB2250FB06009A1C02 /* Patient.swift in Sources */,
+				CD9F4300225D7FC8009A1C02 /* TreatmentViewController.swift in Sources */,
 				CD9F42F8225A597E009A1C02 /* PatientViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

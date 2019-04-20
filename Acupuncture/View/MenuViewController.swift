@@ -31,6 +31,11 @@ class MenuViewController: UIViewController {
             Rows(title: "Tratamento", subTitle: "C4 + 2D")
         ]
     }
+    
+    @IBAction func addSession(_ sender: UIButton) {
+        
+    }
+    
 }
 
 extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
@@ -48,9 +53,14 @@ extension MenuViewController: UITableViewDelegate, UITableViewDataSource {
         return cell
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "patientList" {
-             segue.destination as! PatientViewController
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.row == 0 {
+            self.performSegue(withIdentifier: "showPatient", sender: indexPath);
+        } else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "showSymptom", sender: indexPath);
+        } else if indexPath.row == 2 {
+            self.performSegue(withIdentifier: "showTreatment", sender: indexPath);
         }
     }
+    
 }
