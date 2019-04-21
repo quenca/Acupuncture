@@ -9,14 +9,23 @@
 import UIKit
 import CoreData
 
-class SymptomViewController: UIViewController {
+class SymptomViewController: UIViewController, UISearchBarDelegate, UISearchDisplayDelegate {
     
     @IBOutlet weak var tableView: UITableView!
     
     var symptoms: [NSManagedObject] = []
     
+    var searchController = UISearchController(searchResultsController: nil)
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "Pesquisar sintomas"
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        searchController.searchBar.delegate = self
         
         tableView.delegate = self
         tableView.dataSource = self
@@ -44,6 +53,41 @@ class SymptomViewController: UIViewController {
         }
     }
     
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        if searchText != "" {
+        var predicate: NSPredicate = NSPredicate()
+        predicate = NSPredicate(format: "name contains[c] '\(searchText)'")
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        let context = appDelegate.persistentContainer.viewContext
+        let fetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Symptom")
+        fetchRequest.predicate = predicate
+        
+        do {
+            symptoms = try context.fetch(fetchRequest) as! [NSManagedObject]
+        } catch {
+            print("error")
+        }
+        } else {
+            guard let appDelegate =
+                UIApplication.shared.delegate as? AppDelegate else {
+                    return
+            }
+            
+            let managedContext =
+                appDelegate.persistentContainer.viewContext
+            
+            let fetchRequest =
+                NSFetchRequest<NSManagedObject>(entityName: "Symptom")
+            
+            do {
+                symptoms = try managedContext.fetch(fetchRequest)
+            } catch let error as NSError {
+                print("Could not fetch. \(error), \(error.userInfo)")
+            }
+        }
+        tableView.reloadData()
+    }
+
     @IBAction func addSymptom(_ sender: UIBarButtonItem) {
         let alert = UIAlertController(title: "Novo Sintoma",
                                       message: "Adicionar um sintoma",
@@ -132,6 +176,7 @@ class SymptomViewController: UIViewController {
 
 extension SymptomViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return symptoms.count
     }
     
@@ -139,10 +184,10 @@ extension SymptomViewController: UITableViewDelegate, UITableViewDataSource {
         
         let symptom = symptoms[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "symptomCell", for: indexPath) as! SymptomTableViewCell
-        
+      
         cell.symptomNameLabel.text = symptom.value(forKeyPath: "name") as? String
+            return cell
         
-        return cell
     }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
